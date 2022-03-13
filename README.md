@@ -111,29 +111,7 @@ python image_clf_train.py \
     --img-size 1152 896 \
     --no-img-scale \
     --rescale-factor 0.003891 \
-    --featurewise-center \
-    --featurewise-mean 44.33 \
-    --no-equalize-hist \
-    --batch-size 4 \
-    --train-bs-multiplier 0.5 \
-    --augmentation \
-    --class-list neg pos \
-    --nb-epoch 0 \
-    --all-layer-epochs 50 \
-    --load-val-ram \
-    --load-train-ram \
-    --optimizer adam \
-    --weight-decay 0.001 \
-    --hidden-dropout 0.0 \
-    --weight-decay2 0.01 \
-    --hidden-dropout2 0.0 \
-    --init-learningrate 0.0001 \
-    --all-layer-multiplier 0.01 \
-    --es-patience 10 \
-    --auto-batch-balance \
-    --best-model $BEST_MODEL \
-    --final-model $FINAL_MODEL \
-    $TRAIN_DIR $VAL_DIR $TEST_DIR
+    --featu
 ```
 Some explanations of the arguments:
 - The batch size for training is the product of `--batch-size` and `--train-bs-multiplier`. Because training uses roughtly twice (both forward and back props) the GPU memory of testing, `--train-bs-multiplier` is set to 0.5 here.
