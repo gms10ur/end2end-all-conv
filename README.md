@@ -114,12 +114,7 @@ python image_clf_train.py \
     --featu
 ```
 Some explanations of the arguments:
-- The batch size for training is the product of `--batch-size` and `--train-bs-multiplier`. Because training uses roughtly twice (both forward and back props) the GPU memory of testing, `--train-bs-multiplier` is set to 0.5 here.
-- For model finetuning, only the second stage of the two-stage training is used here. So `--nb-epoch` is set to 0.
-- `--load-val-ram` and `--load-train-ram` will load the image data from the validation and train sets into memory. You may want to turn off these options if you don't have sufficient memory. When turned off, out-of-core training will be used.
-- `--weight-decay` and `--hidden-dropout` are for stage 1. `--weight-decay2` and `--hidden-dropout2` are for stage 2.
-- The learning rate for stage 1 is `--init-learningrate`. The learning rate for stage 2 is the product of `--init-learningrate` and `--all-layer-multiplier`.
-
+bunu yazan tosun okuyana kosun
 ## Computational environment
 The research in this study is carried out on a Linux workstation with 8 CPU cores and a single NVIDIA Quadro M4000 GPU with 8GB memory. The deep learning framework is Keras 2 with Tensorflow as the backend. 
 ### About Keras version
